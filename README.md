@@ -21,3 +21,25 @@ Características extra
  El usuario puede introducir un número variable de dígitos binarios
 Enlaces y recursos útiles
 Sistema numérico binario
+
+```mermaid
+flowchart TD
+    A([Inicio]) --> B[/Leer A, B/]
+    B --> C[Suma = A + B<br/>divisores = 0<br/>i = 1]
+    C --> D{i <= Suma}
+    
+    D -- Sí --> E{Suma MOD i == 0}
+    E -- Sí --> F[divisores = divisores + 1]
+    E -- No --> G[i = i + 1]
+    F --> G
+    G --> D
+    
+    D -- No --> H[/Mostrar Suma/]
+    H --> I[/Mostrar divisores/]
+    I --> J{divisores == 2}
+    
+    J -- Sí --> K[/Mostrar 1/]
+    J -- No --> L[/Mostrar 0/]
+    
+    K --> M([Fin])
+    L --> M
